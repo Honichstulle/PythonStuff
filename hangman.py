@@ -13,19 +13,18 @@ def check_letter(wd,wl,array):
     guess = input("Rate einen Buchstaben: ")
     for i in wd:
         if guess == i:
-            print("true")
             counter = counter + 1
             guess_array.insert(counter,i)
             del guess_array[counter - 1]
 
         else:
-            print("false")
             wrong = wrong + 1
             counter = counter + 1
 
     if wrong == wl:
         strike = strike + 1
-        print(strike)
+        print("Incorrect!")
+        print("Wrong Guesses: " + str(strike))
         print(guess_array)
         wrong = 0
         counter = 0
@@ -34,6 +33,9 @@ def check_letter(wd,wl,array):
         print(guess_array)
         wrong = 0
         counter = 0
+    if "-" not in guess_array:
+        return print ("Congratulations, you guessed the word!")
+
 
 
 
